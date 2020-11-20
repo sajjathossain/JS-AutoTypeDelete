@@ -1,0 +1,49 @@
+:root{
+    --default-background-color: gray;
+    --cursor-size: 50px;
+}
+
+*{
+    padding: 0%;
+}
+
+body{
+    background-color: var(--default-background-color);
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+}
+
+#container{
+    align-content: space-evenly;
+    /*margin-top: 20vh;*/
+    /*margin-left: 10%;*/
+    margin: 15% 10%;
+    display: flex;
+}
+
+#text{
+    font-family: Bahnschrift, cursive;
+    font-size: 45px;
+    letter-spacing: 2px;
+    color: white;
+    animation: infinite .75s step-end infinite;
+}
+
+#cursor{
+    height: var(--cursor-size);
+    width: 5px;
+    margin-left: 2px;
+    background-color: whitesmoke;
+    animation: blink .75s step-end infinite;
+}
+
+
+@keyframes blink {
+    from, to {
+        background-color: transparent;
+    }
+    50% {
+        background-color: whitesmoke;
+    }
+}
