@@ -2,31 +2,31 @@ const text = document.getElementById("text");
 
 const timoutTime = 120;
 let listIndex = 0;
-let now = 0;
+let currentOutputSize = 0;
 let isIncreasing = true;
 let textOut = "";
-let output = [  "Life is not about planing!",
-                "It is just abot doing the right thing",
-                "At the right time!",
+let output = [  "Auto Type & Delete Animation!",
+                "In an easier way that is  easy to understand!",
+                "For which it is easy to modify!",
                 "Designed And Developed By Sajjat Hossain!"];
 
 function startTyping(handle){
 
         if (textOut.length <= output[listIndex].length && isIncreasing) {
 
-            textOut = output[listIndex].substring(0, now + 2);
-            text.innerText = output[listIndex].substr(0, now + 2);
-            now += 1;
+            textOut = output[listIndex].substring(0, currentOutputSize + 2);
+            text.innerText = output[listIndex].substr(0, currentOutputSize + 2);
+            currentOutputSize += 1;
 
         } else if (isIncreasing === false) {
 
-            textOut = output[listIndex].substring(0, now - 2);
-            text.innerText = output[listIndex].substr(0, now - 2);
-            now -= 1;
+            textOut = output[listIndex].substring(0, currentOutputSize - 2);
+            text.innerText = output[listIndex].substr(0, currentOutputSize - 2);
+            currentOutputSize -= 1;
 
         }
 
-        if (now === output[listIndex].length+2) {
+        if (currentOutputSize === output[listIndex].length+2) {
             isIncreasing = false;
         }
 

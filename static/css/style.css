@@ -1,40 +1,41 @@
 :root{
-    --default-background-color: gray;
-    --cursor-size: 50px;
+    --default-background-color: f4f4f4;
+    --text-color: #06c;
+    --text-size: 50px;
+    --cursor-color: orangered;
 }
 
 *{
-    padding: 0%;
+    margin: 0;
+    padding: 0;
 }
 
 body{
     background-color: var(--default-background-color);
+    display: flex;
     height: 100vh;
-    width: 100%;
-    text-align: center;
 }
 
 #container{
-    align-content: space-evenly;
-    /*margin-top: 20vh;*/
-    /*margin-left: 10%;*/
-    margin: 15% 10%;
+    align-items: center;
+    margin: 10px auto;
     display: flex;
 }
 
 #text{
-    font-family: Bahnschrift, cursive;
-    font-size: 45px;
+    font-family: "Source Code Pro",Bahnschrift, sans-serif;
+    font-size: var(--text-size);
+    font-weight: bold;
     letter-spacing: 2px;
-    color: white;
+    color: var(--text-color);
     animation: infinite .75s step-end infinite;
 }
 
 #cursor{
-    height: var(--cursor-size);
+    height: calc(var(--text-size) + 5px);
     width: 5px;
     margin-left: 2px;
-    background-color: whitesmoke;
+    background-color: var(--cursor-color);
     animation: blink .75s step-end infinite;
 }
 
@@ -44,6 +45,6 @@ body{
         background-color: transparent;
     }
     50% {
-        background-color: whitesmoke;
+        background-color: var(--cursor-color);
     }
 }
